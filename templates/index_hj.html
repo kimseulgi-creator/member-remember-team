@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+
+        <title>Re-member</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@200;300;400;500;800&display=swap" rel="stylesheet">
+        <link href="./style.css" rel="stylesheet" />
+        <style>
+            * {
+                margin: 0; padding: 0;
+            }
+            a {
+                text-decoration: none;
+                color:inherit;
+            }
+            a:focus, a:hover {
+                color:inherit;
+            }
+            img {
+                width: 100%;
+            }
+
+            .title {
+                width: 100%;
+                height: 250px;
+
+                background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                    url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+                background-position: center;
+                background-size: cover;
+                color: white;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                font-family: 'Dancing Script', 'san-serif';
+                font-size: 3rem;
+                font-weight: 800;
+            }
+
+            .section {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 80px 0;
+            }
+            .team-member {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+            }
+            .member-list {
+                width: calc((100% - 6vw) / 3);
+                padding: 1%;
+                margin: 1% 1.5%;
+                border:solid 1px #efefef;
+                box-sizing: border-box;
+                border-radius: 3px;
+                font-family: 'Gowun Dodum', sans-serif;
+            }
+            .member-img {
+                background-color: rgb(233, 233, 233);
+                height: 380px;
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+            }
+            .member-info {
+                padding:20px 15px
+            }
+            .mem-name {
+                font-weight: bold;
+                padding-bottom: 10px;
+            }
+            .member-info p {
+                margin-bottom: 3px;
+                display: inline-block;
+                width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            /*popup*/
+            section#popup {
+                width: 100%; height: 100%;
+                position: fixed;                
+                left: 0; right: 0; top:0; bottom:0;
+                z-index: 10;
+                display: none;
+            }
+            .popup-bg {
+                position: fixed;
+                width: 100%; height: 100vh;
+                left: 0; right: 0; top:0; bottom:0;
+                background-color: rgba(0, 0, 0, 0.7);
+                z-index: 20;
+            }
+            .member-layer {                
+                width: 80vw; height: 80vh;
+                position: absolute;
+                top:50%;left:50%;
+                transform: translate(-50%,-50%);
+                background-color: #fff;
+                border-radius: 5px;
+                overflow: hidden;
+                z-index: 999;
+            }
+            .member-contents {
+                width: 100%; height: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                overflow: hidden;
+            }
+            .member-contents> div:first-child {
+                width: 40%; height: 100%;
+            }
+            .member-contents> div:last-child {
+                width: 60%;
+                padding:5%;
+            }
+            #popup button {
+                border:0;
+                width: 50px; height: 50px;
+                position: absolute;
+                right: 0; top: 0;
+                background-color: transparent;
+                font-weight: bold;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function () {
+                listing();
+            });
+
+            function listing() {
+                fetch('/movie')
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log(data);
+                        alert(data['msg']);
+                    });
+            }
+
+            function posting() {
+                let formData = new FormData();
+                formData.append('sample_give', '샘플데이터');
+
+                fetch('/movie', { method: 'POST', body: formData })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log(data);
+                        alert(data['msg']);
+                    });
+            }
+
+            function open_popup() {
+                $('#popup').show();
+            }
+            function close_popup() {
+                $('#popup').hide();
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="title">
+            <h1>Re-member</h1>
+        </div>
+        <section class="section team-intro">
+            우리 팀만의 특징과 추구하는 궁극적인 목표
+        </section>
+        <section class="section team-member">            
+            <div class="member-list" onclick="open_popup()">
+                <div class="member-img"><img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F019a13bb-bfbb-4b12-a6a6-dcb2581ffa56%2F%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-05-15_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_10.14.06.png?id=33303ad7-7434-4054-935c-da89aaa47fe6&table=block&spaceId=573198d7-5cac-4985-8704-33bd2c0bac8f&width=2000&userId=36dfcc65-e7ac-49da-aa5b-f144d7c03eaf&cache=v2" /></div>                
+                <div class="member-info">
+                    <h5 class="mem-name">유지완 <span class="small">팀장</span></h5>
+                    <p class="mem-posi">포지션 : FE</p>
+                    <p class="mem-mbti">MBTI : ISTJ</p>
+                    <p class="mem-hobby">취미 : 힙한 카페 투어</p>
+
+                    <p class="mem-mail">이메일 : outgrowth.r@gmail.com</p>
+                    <p class="mem-git"><a href="https://github.com/NickYOOO"> Git ID : NickYOOO</a></p>
+                    <p class="mem-blog"><a href="https://velog.io/@yjw0517" > Blog : https://velog.io/@yjw0517 </a></p>
+                </div>
+            </div>
+            <div class="member-list" onclick="open_popup()">
+                <div class="member-img"><img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F49510af5-39a3-4b19-8433-d899b5e55699%2F%25EC%25A0%259C%25EB%25AA%25A9_%25EC%2597%2586%25EC%259D%258C.jpg?id=0358bc31-199d-4cd4-9590-0329302a6958&table=block&spaceId=573198d7-5cac-4985-8704-33bd2c0bac8f&width=2000&userId=36dfcc65-e7ac-49da-aa5b-f144d7c03eaf&cache=v2" /></div>
+                
+                <div class="member-info">
+                    <h5 class="mem-name">김슬기</h5>
+                    <p class="mem-posi">포지션 : FE</p>
+                    <p class="mem-mbti">MBTI : INFJ</p>
+                    <p class="mem-hobby">취미 : 등산</p>
+
+                    <p class="mem-mail">이메일 : rlatmfrl9@naver.com</p>
+                    <p class="mem-git"><a href="https://github.com/kimseulgi-creator"> Git ID : kimseulgi-creator</a></p>
+                    <p class="mem-blog"><a href="https://seul-bean-developer.tistory.com/" > Blog : https://seul-bean-developer.tistory.com/</a></p>
+                </div>
+            </div>
+            <div class="member-list" onclick="open_popup()">
+                <div class="member-img"><img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F09b167de-c26d-4f87-b0ae-0b3ef48624ac%2F%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-05-15_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_10.17.57.png?id=08c1e715-b620-4ab9-91d3-6a64d1a357d2&table=block&spaceId=573198d7-5cac-4985-8704-33bd2c0bac8f&width=2000&userId=36dfcc65-e7ac-49da-aa5b-f144d7c03eaf&cache=v2" /></div>                
+                <div class="member-info" onclick="open_popup()">
+                    <h5 class="mem-name">이지은</h5>
+                    <p class="mem-posi">포지션 : FE</p>
+                    <p class="mem-mbti">MBTI : ISFP</p>
+                    <p class="mem-hobby">취미 : 없어서 만들고 싶은 취미가 .. ‘그림그리기, 베이스 기타치기’입니당</p>
+
+                    <p class="mem-mail">이메일 : jieun2563@naver.com</p>
+                    <p class="mem-git"><a href="https://github.com/JellyBear97"> Git ID : JellyBear97</a></p>
+                    <p class="mem-blog"><a href="https://iam-jelly-bear.com/" > Blog : https://iam-jelly-bear.com/ </a></p>
+                </div>                
+            </div>
+            <div class="member-list" onclick="open_popup()">
+                <div class="member-img"><img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fed46e5a4-85bb-4d9e-8f44-be21ad3d6e84%2F1.png?id=6c72c884-e8be-427f-b3d3-56c5fbc099d6&table=block&spaceId=573198d7-5cac-4985-8704-33bd2c0bac8f&width=2000&userId=36dfcc65-e7ac-49da-aa5b-f144d7c03eaf&cache=v2" /></div>                
+                <div class="member-info">
+                    <h5 class="mem-name">김진성</h5>
+                    <p class="mem-posi">포지션 : FE</p>
+                    <p class="mem-mbti">MBTI : INTJ</p>
+                    <p class="mem-hobby">취미 : 주짓수, 요리</p>
+
+                    <p class="mem-mail">이메일 : treasure1209@naver.com</p>
+                    <p class="mem-git"><a href="https://github.com/treasureholy"> Git ID : treasureholy</a></p>
+                    <p class="mem-blog"><a href="" > Blog : </a></p>
+                </div>
+            </div>
+            <div class="member-list" onclick="open_popup()">
+                <div class="member-img"><img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F868930d1-6c75-4110-bfab-7a6cf758b85c%2F%25EA%25B2%258C%25EB%258D%25941.jpg?id=acb8d1ec-d7ff-419c-8b24-9ab53c972165&table=block&spaceId=573198d7-5cac-4985-8704-33bd2c0bac8f&width=2000&userId=36dfcc65-e7ac-49da-aa5b-f144d7c03eaf&cache=v2" /></div>
+                
+                <div class="member-info">
+                    <h5 class="mem-name">유희정</h5>
+                    <p class="mem-posi">포지션 : FE</p>
+                    <p class="mem-mbti">MBTI : ESFJ</p>
+                    <p class="mem-hobby">취미 : Play</p>
+
+                    <p class="mem-mail">이메일 : aldls2311@naver.com</p>
+                    <p class="mem-git"><a href="https://github.com/heejung-newheee"> Git ID : heejung-newheee</a></p>
+                    <p class="mem-blog"><a href="" > Blog : </a></p>
+                </div>
+            </div>            
+        </section>
+        <section id="popup">
+            <div class="popup-bg" onclick="close_popup()"></div>
+            <div class="member-layer">
+                <div class="member-contents">
+                    <div class="pop-img">
+                        <img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F019a13bb-bfbb-4b12-a6a6-dcb2581ffa56%2F%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2023-05-15_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_10.14.06.png?id=33303ad7-7434-4054-935c-da89aaa47fe6&table=block&spaceId=573198d7-5cac-4985-8704-33bd2c0bac8f&width=2000&userId=36dfcc65-e7ac-49da-aa5b-f144d7c03eaf&cache=v2" alt="멤버 이미지" />
+                    </div>
+                    <div class="pop-info">
+                        <h5 class="mem-name">유지완 <span class="small">팀장</span></h5>
+                        <p class="mem-posi">포지션 : FE</p>
+                        <p class="mem-mbti">MBTI : ISTJ</p>
+                        <p class="mem-hobby">취미 : 힙한 카페 투어</p>
+
+                        <p class="mem-mail">이메일 : outgrowth.r@gmail.com</p>
+                        <p class="mem-git"><a href="https://github.com/NickYOOO"> Git ID : NickYOOO</a></p>
+                        <p class="mem-blog"><a href="https://velog.io/@yjw0517" > Blog : https://velog.io/@yjw0517 </a></p>
+                    </div>              
+                    
+                </div>
+                <button onclick="close_popup()">X</button>
+            </div>
+            
+        </section>
+    </body>
+</html>
