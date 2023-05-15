@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pretendard-Regular';
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.inner {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #3F4E4F;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+}
+
+header .inner, section.inner {
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    color: #A27B5C;
+    
+}
+
+#columns {
+    /* column-width: 300px;
+    column-gap: 15px; */
+    width: 600px;
+    margin: 70px auto 0;
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  #columns figure {
+    width: 200px;
+
+    display: inline-block;
+    text-align: center;
+  
+    /* margin: 10px; */
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+  
+    border-radius: 40px;
+  }
+  
+  #columns figure img {
+    width: 100%;
+    border-radius: 30px;
+  }
+  
+  #columns figure figcaption.name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #630A10;
+    padding: 10px;
+    margin-top: 11px;
+  }
+  
+  #columns figure figcaption.mbti {
+    padding: 10px;
+    border-radius: 18px;
+    color: white;
+    background-color: #4E6C50;
+  }
+  
+  #columns figure figcaption.caption {
+    padding: 10px;
+    color: #617A55;
+  }
+
+.detail {
+
+    width: 100%;
+    height: 40px;
+
+    background-color: #630A10;
+    color: #FCF0C8;
+    font-size: 20px;
+
+    border-radius: 50px;
+    border: 2px solid whitesmoke;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+
+    opacity: 0.7;
+}
+
+.detail:hover {
+    font-weight: 700;
+    border: 5px solid #630A10;
+    box-sizing: border-box;
+
+    opacity: 1;
+}
