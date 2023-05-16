@@ -27,11 +27,13 @@
         </div>
     </header>
     <!-- team contents -->
-    <div>
-        팀 소개
+    <div class="info-team">
+        <div class="box-team">
+            <p> 4조 기억해조 입니다!</p>
+            <p> 이멤버 리멤버 re_member!</p>
+        </div>
     </div>
     <!-- member list -->
-    <!-- <section class="inner"> -->
     <div id="columns">
         <figure>
             <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/cinderella.jpg" />
@@ -99,6 +101,13 @@
             </button>
         </figure>
     </div>
+    <!--btn area-->
+    <div class="btnarea">
+        <button class="join">함께할래요 ✋🏻</button>
+    </div>
+
+
+
     <!--detail Modal -->
     <div id="detail" class="detail-overlay">
         <div class="detail-flex">
@@ -116,7 +125,7 @@
                     <div class="info-text">
                         <p class="info-name">신데렐라</p>
                         <p class="info-mbti">ISTJ</p>
-                        <a href="https://velog.io/@yjw0517" title="블로그 이동"class="info-blog">블로그</a>
+                        <a href="https://velog.io/@yjw0517" target='_blank' title="블로그 이동"class="info-blog">블로그</a>
                     </div>
 
                 </div>
@@ -129,7 +138,74 @@
             </div>
         </div>
     </div>
+    <!--post Modal-->
+    <div id="overlay" class="join-overlay">
+        <div class="fieldset">
 
+            <div class="title">
+                <p>기억해조 가입하기</p>
+            </div>
+
+            <table>
+                <colgroup>
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td class="image-box">
+                            <input type="text" id="img" name="img" size="35"
+                                placeholder="이미지 url을 적어줘">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="name-box">
+                            <label for="aname">
+                                <input type="text" id="aname" name="aname"  size="35"
+                                    placeholder="이름을 적어줘" autofocus>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="mbti-box">
+                            <label for="mbti">
+                                <input type="text" id="mbti" name="mbti" size="35"
+                                placeholder="MBTI 적어줘" autofocus>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="blog-box">
+                            <input id="blog" name="blog"  cols="30" rows="5"
+                                placeholder="블로그를 적어줘"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="comment-box">
+                            <textarea name="edit-advantages" id="edit-advantages" cols="30" rows="5"
+                                placeholder="너의 장점을 적어줘"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="comment-box">
+                            <textarea name="edit-collaboration" id="edit-collaboration" cols="30" rows="5"
+                                placeholder="너의 협업 스타일을 적어줘"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pw-box">
+                            <input type="password" id="pw" name="pw" maxlength="15" size="35"
+                                placeholder="비밀번호를 적어줘" >
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="modal-btn-area">
+                <button class="submit">작성하기</button>
+                <button class="cancel">취소하기</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

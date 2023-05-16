@@ -34,14 +34,14 @@ $(function () {
             });
         });
 
-         //  close Modal
-    $(document).click(function(e) {
-        if( $('#detail').is(e.target) ) {
-            $('.detail-overlay').css({
-                'display' : 'none'
-            });
-        }
-    });
+        //  close Modal
+        $(document).click(function (e) {
+            if ($('#detail').is(e.target)) {
+                $('.detail-overlay').css({
+                    'display': 'none'
+                });
+            }
+        });
         //  icon hover
         $('.edit-icons .edit').hover(function () {
             $(this).attr('src', '../static/icon/pencil-filled.svg');
@@ -57,5 +57,24 @@ $(function () {
 
     }
 
+    //join modal
+    //   share Modal
+
+    $('.join').click(function () {
+        let join_modal = $('.join-overlay');
+
+        join_modal.css({
+            'display': 'block'
+        });
+    });
+
+    $('.cancel').click(function () {
+        let $modal = $('.join-overlay');
+
+        $modal.css({
+            'display': 'none'
+        });
+    });
 
 });
+
