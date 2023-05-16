@@ -9,6 +9,12 @@
 
     <link rel="stylesheet" href="../static/index.css" />
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../static/index.css" />
+
+    <script src="../static/index.js"></script>
+
 </head>
 
 <body>
@@ -21,9 +27,9 @@
         </div>
     </header>
     <!-- team contents -->
-<div>
-    팀 소개
-</div>
+    <div>
+        팀 소개
+    </div>
     <!-- member list -->
     <!-- <section class="inner"> -->
     <div id="columns">
@@ -92,9 +98,38 @@
                 자세히
             </button>
         </figure>
-        
     </div>
-    <!-- </section> -->
-    
+    <!--detail Modal -->
+    <div id="detail" class="detail-overlay">
+        <div class="detail-flex">
+            <div class="edit-icons">
+                <img src="../static/icon/pencil-lined.svg" alt="#" class="edit">
+                <img src="../static/icon/trash-can-lined.svg" alt="#" class="del">
+            </div>
+            <div class="info-text">
+                <div class="info-flex">
+                    <div class="info-image">
+                        <!-- <img src="#" alt="#">  -->
+                        <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/cinderella.jpg" />
+                    </div>
+
+                    <div class="info-text">
+                        <p class="info-name">신데렐라</p>
+                        <p class="info-mbti">ISTJ</p>
+                        <a href="https://velog.io/@yjw0517" title="블로그 이동"class="info-blog">블로그</a>
+                    </div>
+
+                </div>
+                <div class="info-contents">
+                    <p class="info-subject">장점</p>
+                    <p class="info-Advantages">저는 친절하고, 도움을 주며, 동정적이고, 남을 사랑하는 성격을 가지고 있으며, 순수하고 착한 면모가 장점입니다.</p>
+                    <p class="info-subject"> 협업 스타일 </p>
+                    <p class="info-collaboration">소통을 중요시 생각하는 스타일입니다. 동물들과 친화력이 상당히 좋은 편이라 대화까지 나눌 수 있고, 생쥐들과 고양이 집에사는 개와 말등 다른 동물들의 식사까지 챙겨주며 협력했습니다. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>
