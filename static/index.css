@@ -76,7 +76,6 @@ header .inner, section.inner {
 
 
 
-
 /* team card CSS */
 #columns {
     width: 600px;
@@ -127,7 +126,7 @@ header .inner, section.inner {
 
 
 
-  /* btn CSS */
+  /*post btn CSS */
   .btnarea {
     position: fixed;
     left: 50%;
@@ -363,7 +362,7 @@ label {
     border-radius: 50%;
 }
 
-.info-Advantages, .info-collaboration {
+.info-advantages, .info-collaboration {
     text-align: center;
 
     margin-top: 15px;
