@@ -5,26 +5,73 @@ $(function () {
 
     function listing() {
 
-        //  info Modal
-        $('.content').click(function () {
-            let info_modal = $('.detail-overlay');
+        //list Load
+        fetch('/post').then((res) => res.json()).then((data) => {
+            let rows = data['result'];
+            $('#columns').empty();
+            console.log(rows)
+            rows.forEach((a) => {
+                let image = a['img'];
+                let name = a['name'];
+                let mbti = a['mbti'];
+                let _id = a['_id']; 
 
-            let $image = $(this).children('img').attr('src');
-            let $name = $(this).children('h3').text();
-            let $star = $(this).children('p').text();
-            let $comment = $(this).children('figcaption').text();
+                let temp_html = ` <figure class="content" data-num="${_id}">
+                                      <img src="${image}" />
+    
+                                      <figcaption class="name">
+                                            ${name}
+                                      </figcaption>
+                                      <figcaption class="mbti">
+                                            ${mbti}
+                                      </figcaption>
+                                      <button class="detail">
+                                          자세히
+                                      </button>
+                                  </figure>`;
+                $('#columns').append(temp_html);
+                console.log($('.name').text())
+            
+            });
 
-            $('.info-image img').attr('src', `${$image}`);
-            $('.info-name').text($name);
-            $('.info-star').text($star);
-            $('.info-comment').text($comment);
+            //  detail-Modal , Get ,Modal close status
+            $('.content').click(function () {
+                let detail_modal = $('.detail-overlay');
 
-            detail_modal.css({
-                'display': 'block'
+                let id = $(this).data('num');
+
+                $('.detail').attr('data-num', id);
+
+                let all_id = rows.map(rows => rows['_id']);
+
+                let indexNum = $.inArray(id, all_id);
+
+                let this_data = rows[indexNum]
+                
+                let $image =this_data['img']
+                let $name = this_data['name'];
+                let $mbti = this_data['mbti'];
+                let $blog = this_data['blog'];
+                let $advantages = this_data['advantages'];
+                let $collaboration = this_data['collaboration'];
+                let _id = this_data['num'];
+                
+                $('.info-image img').attr('src', $image);
+                $('.info-name').text($name);
+                $('.info-mbti').text($mbti);
+                $('.info-blog').text($blog);
+                $('.info-advantages').text($advantages);
+                $('.info-collaboration').text($collaboration);
+
+                $('.info-overlay').attr('data-num', _id);
+
+                detail_modal.css({
+                    'display': 'block'
+                });
             });
         });
 
-        //   open Modal
+        //   open detail-Modal
 
         $('.detail').click(function () {
             let detail_modal = $('.detail-overlay');
@@ -34,7 +81,7 @@ $(function () {
             });
         });
 
-        //  close Modal
+        //  close detail-Modal
         $(document).click(function (e) {
             if ($('#detail').is(e.target)) {
                 $('.detail-overlay').css({
@@ -42,7 +89,7 @@ $(function () {
                 });
             }
         });
-        //  icon hover
+        //  info-Modal edit/delete icon hover
         $('.edit-icons .edit').hover(function () {
             $(this).attr('src', '../static/icon/pencil-filled.svg');
         }, function () {
@@ -57,7 +104,7 @@ $(function () {
 
     }
 
-    //join modal
+    //join Modal Open, Close
 
     $('.join').click(function () {
         let join_modal = $('.join-overlay');
@@ -75,7 +122,7 @@ $(function () {
         });
     });
 
-    //Post
+    //join Modal Post
     function save_remember() {
         let img = $('#img').val();
         let name = $('#aname').val();
@@ -100,52 +147,52 @@ $(function () {
         });
     }
 
-     //  작성하기 유효성 검사
-     $('.submit').click(post_check);
+    //  작성하기 유효성 검사
+    $('.submit').click(post_check);
     //  $('.edit-submit').click(edit_check);    
- 
- 
-     function post_check() {
-         const checkImg = $('#overlay #img');
-         const checkName = $('#overlay #aname');
-         const checkMbti = $('#overlay #mbti');
-         const checkBlog = $('#overlay #blog');
-         const checkAdvantages = $('#overlay #edit-advantages');
-         const checkCollaboration = $('#overlay #edit-collaboration');
-         const checkPw = $('#overlay #pw');
- 
-         if ( !checkImg.val() ) {      //  frn의 product의 value값이 없을 때 = input에 입력한 값이 없을 때
-             alert('이미지url을 입력해 주세요');
-             checkImg.focus();
-             return false;   //  경고창을 확인한 후 페이지가 넘어가지 않고 그대로 유지하기 위함, method빼면 못넘어감.
-         } else if ( checkName.val() == 0 ) {
-             alert('이름을 입력해 주세요');
-             checkName.focus();
-             return false;
-         } else if ( !checkMbti.val() ) {
-             alert('MBTI를 입력해 주세요');
-             checkMbti.focus();
-             return false;
-         } else if ( !checkBlog.val() ) {
-             alert('블로그 주소를 입력해 주세요');
-             checkBlog.focus();
-             return false;
-         } else if ( !checkAdvantages.val() ) {
-             alert('자신의 장점을 입력해 주세요');
-             checkAdvantages.focus();
-             return false;
-         } else if ( !checkCollaboration.val() ) {
+
+
+    function post_check() {
+        const checkImg = $('#overlay #img');
+        const checkName = $('#overlay #aname');
+        const checkMbti = $('#overlay #mbti');
+        const checkBlog = $('#overlay #blog');
+        const checkAdvantages = $('#overlay #edit-advantages');
+        const checkCollaboration = $('#overlay #edit-collaboration');
+        const checkPw = $('#overlay #pw');
+
+        if (!checkImg.val()) {      //  frn의 product의 value값이 없을 때 = input에 입력한 값이 없을 때
+            alert('이미지url을 입력해 주세요');
+            checkImg.focus();
+            return false;   //  경고창을 확인한 후 페이지가 넘어가지 않고 그대로 유지하기 위함, method빼면 못넘어감.
+        } else if (!checkName.val()) {
+            alert('이름을 입력해 주세요');
+            checkName.focus();
+            return false;
+        } else if (!checkMbti.val()) {
+            alert('MBTI를 입력해 주세요');
+            checkMbti.focus();
+            return false;
+        } else if (!checkBlog.val()) {
+            alert('블로그 주소를 입력해 주세요');
+            checkBlog.focus();
+            return false;
+        } else if (!checkAdvantages.val()) {
+            alert('자신의 장점을 입력해 주세요');
+            checkAdvantages.focus();
+            return false;
+        } else if (!checkCollaboration.val()) {
             alert('협력 스타일을 입력해 주세요');
             checkCollaboration.focus();
             return false;
-         } else if ( !checkPw.val() ) {
-             alert('비밀번호를 입력해 주세요');
+        } else if (!checkPw.val()) {
+            alert('비밀번호를 입력해 주세요');
             checkPw.focus();
             return false;
         } else {
             save_remember();
-         }
-     }
-    
+        }
+    }
+
 });
 
