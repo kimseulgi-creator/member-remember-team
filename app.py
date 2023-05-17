@@ -59,19 +59,19 @@ def info_post():
 
 #     return jsonify({'msg':'게시글 수정 완료!'})
 
-# from bson.objectid import ObjectId
+from bson.objectid import ObjectId
 
-# @app.route("/reviews", methods=["GET"])
-# def reviews_get():
-#     all_reviews = list(db.reviews.find({}))
+@app.route("/post", methods=["GET"])
+def list_get():
+    all_list = list(db.remember.find({}))
     
-#     result = []
-#     for review in all_reviews:
-#         review['_id'] = str(ObjectId(review['_id'])) # convert the ObjectId to a string
-#         # print(review)
-#         result.append(review)
+    result = []
+    for remember_list in all_list:
+        remember_list['_id'] = str(ObjectId(remember_list['_id'])) # convert the ObjectId to a string
+        # print(list)
+        result.append(remember_list)
 
-#     return jsonify({'result': result})
+    return jsonify({'result': result})
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
