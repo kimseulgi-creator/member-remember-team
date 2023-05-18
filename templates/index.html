@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>기억해조re_member 💭</title>
+    <link rel="icon" type="image/x-icon" href="../static/img/logo-black.png">
 
     <link rel="stylesheet" href="../static/index.css" />
 
@@ -22,7 +23,7 @@
     <header>
         <div class="inner">
             <div class="logo">
-                <h1>기억해줘Re_Member</h1>
+                <h1><img src="../static/img/logo-horiz-wh.png" alt="logo" /></h1>
             </div>
         </div>
     </header>
@@ -35,71 +36,7 @@
     </div>
     <!-- member list -->
     <div id="columns">
-        <figure>
-            <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/cinderella.jpg" />
-
-            <figcaption class="name">
-                이름
-            </figcaption>
-            <figcaption class="mbti">
-                MBTI
-            </figcaption>
-            <button class="detail">
-                자세히
-            </button>
-        </figure>
-        <figure>
-            <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/cinderella.jpg" />
-
-            <figcaption class="name">
-                이름
-            </figcaption>
-            <figcaption class="mbti">
-                MBTI
-            </figcaption>
-            <button class="detail">
-                자세히
-            </button>
-        </figure>
-        <figure>
-            <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/cinderella.jpg" />
-
-            <figcaption class="name">
-                이름
-            </figcaption>
-            <figcaption class="mbti">
-                MBTI
-            </figcaption>
-            <button class="detail">
-                자세히
-            </button>
-        </figure>
-        <figure>
-            <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/cinderella.jpg" />
-
-            <figcaption class="name">
-                이름
-            </figcaption>
-            <figcaption class="mbti">
-                MBTI
-            </figcaption>
-            <button class="detail">
-                자세히
-            </button>
-        </figure>
-        <figure>
-            <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/cinderella.jpg" />
-
-            <figcaption class="name">
-                이름
-            </figcaption>
-            <figcaption class="mbti">
-                MBTI
-            </figcaption>
-            <button class="detail">
-                자세히
-            </button>
-        </figure>
+  
     </div>
     <!--btn area-->
     <div class="btnarea">
@@ -202,6 +139,70 @@
             </div>
         </div>
     </div>
+    <!--edit Modal-->
+    <div id="overlay" class="edit-overlay">
+        <div class="fieldset">
+
+            <div class="title">
+                <p>멤버정보 수정하기</p>
+            </div>
+
+            <table>
+                <colgroup>
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td class="image-box">
+                            <input type="text" id="img" name="img" size="35" placeholder="이미지 url을 적어줘">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="name-box">
+                            <label for="aname">
+                                <input type="text" id="aname" name="aname" size="35" placeholder="이름을 적어줘" autofocus>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="mbti-box">
+                            <label for="mbti">
+                                <input type="text" id="mbti" name="mbti" size="35" placeholder="MBTI 적어줘" autofocus>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="blog-box">
+                            <input id="blog" name="blog" cols="30" rows="5" placeholder="블로그를 적어줘"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="comment-box">
+                            <textarea name="edit-advantages" id="edit-advantages" cols="30" rows="5"
+                                placeholder="너의 장점을 적어줘"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="comment-box">
+                            <textarea name="edit-collaboration" id="edit-collaboration" cols="30" rows="5"
+                                placeholder="너의 협업 스타일을 적어줘"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pw-box">
+                            <input type="password" id="pw" name="pw" maxlength="15" size="35" placeholder="비밀번호를 적어줘">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="modal-btn-area">
+                <button class="edit-submit">작성하기</button>
+                <button class="edit-cancel">취소하기</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>

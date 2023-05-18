@@ -37,29 +37,35 @@ def info_post():
 
     return jsonify({'msg':'게시물 등록완료'})
 
-# @app.route("/reviews/update", methods=["POST"])
-# def modify_reviews():
-#     name_receive = request.form['name_give']
-#     star_receive = request.form['star_give']
-#     comment_receive = request.form['comment_give']
-#     img_receive = request.form['img_give']
-#     pw_receive = request.form['pw_give']
-#     id_receive = request.form['_id_give']
+@app.route("/post/update", methods=["POST"])
+def update_remember():
+    img_receive = request.form['img_give']
+    name_receive = request.form['name_give']
+    mbti_receive = request.form['mbti_give']
+    blog_receive = request.form['blog_give']
+    advantages_receive = request.form['advantages_give']
+    collaboration_receive = request.form['collaboration_give']
+    pw_receive = request.form['pw_give']
+    id_receive = request.form['_id_give']
+
     
-#     doc = {
-#         'name' : name_receive,
-#         'star' : star_receive,
-#         'comment' : comment_receive,
-#         'img' : img_receive,
-#         'pw' : pw_receive
-#     }
-#     print("가나다", id_receive, doc)
+    doc = {
+       'img' : img_receive,
+        'name' : name_receive,
+        'mbti' : mbti_receive,
+        'blog' : blog_receive,
+        'advantages' : advantages_receive,
+        'collaboration' : collaboration_receive,
+        'pw' : pw_receive
+    }
 
-#     db.reviews.update_one({"_id": ObjectId(id_receive)}, {"$set" : doc})
+    db.reviews.update_one({"_id": ObjectId(id_receive)}, {"$set" : doc})
 
-#     return jsonify({'msg':'게시글 수정 완료!'})
+    return jsonify({'msg':'게시물 수정완료'})
 
 from bson.objectid import ObjectId
+
+
 
 @app.route("/post", methods=["GET"])
 def list_get():
@@ -68,7 +74,6 @@ def list_get():
     result = []
     for remember_list in all_list:
         remember_list['_id'] = str(ObjectId(remember_list['_id'])) # convert the ObjectId to a string
-        # print(list)
         result.append(remember_list)
 
     return jsonify({'result': result})
