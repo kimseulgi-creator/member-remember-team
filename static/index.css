@@ -40,10 +40,11 @@ header .inner, section.inner {
     justify-content: center;
 }
 
-.logo {
-    color: #A27B5C;
-    
+header .inner img {
+    width: 300px;
+    margin-top: 5px;
 }
+
 
 
 
@@ -186,6 +187,8 @@ div.fieldset {
     background-color: #fff;
 }
 
+.edit-overlay input,
+.edit-overlay textarea,
 .join-overlay input,
 .join-overlay textarea {
     margin: 0;
@@ -197,7 +200,7 @@ div.fieldset {
     vertical-align: middle;
 }
 
-.join-overlay button {
+.edit-overlay, .join-overlay button {
     border: 0;
     font-size: 16px;
 }
@@ -207,7 +210,7 @@ label {
     height: 100%;
 }
 
-.join-overlay, .info-overlay{
+.join-overlay, .info-overlay, .edit-overlay{
     height: 100%;
     width: 100%;
     display: none;
@@ -301,7 +304,7 @@ label {
     opacity: 1;
 }
 
-.detail-overlay, .join-overlay {
+.detail-overlay, .join-overlay,.edit-overlay {
     height: 100%;
     width: 100%;
     display: none;
