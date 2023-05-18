@@ -37,7 +37,7 @@ def info_post():
 
     return jsonify({'msg':'게시물 등록완료'})
 
-@app.route("/post/update", methods=["POST"])
+@app.route("/post/update", methods=["PUT"])
 def update_remember():
     img_receive = request.form['img_give']
     name_receive = request.form['name_give']
@@ -45,7 +45,6 @@ def update_remember():
     blog_receive = request.form['blog_give']
     advantages_receive = request.form['advantages_give']
     collaboration_receive = request.form['collaboration_give']
-    pw_receive = request.form['pw_give']
     id_receive = request.form['_id_give']
 
     
@@ -56,7 +55,6 @@ def update_remember():
         'blog' : blog_receive,
         'advantages' : advantages_receive,
         'collaboration' : collaboration_receive,
-        'pw' : pw_receive
     }
 
     db.remember.update_one({"_id": ObjectId(id_receive)}, {"$set" : doc})
@@ -79,7 +77,7 @@ def list_get():
     return jsonify({'result': result})
 
 
-@app.route("/post/delete", methods=["POST"])
+@app.route("/post/delete", methods=["DELETE"])
 def delete_post():
     id_receive = request.form['_id_give']
 
