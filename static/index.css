@@ -34,8 +34,9 @@ header {
     z-index: 9;
 }
 
-header .inner, section.inner {
-    display: flex;    
+header .inner,
+section.inner {
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -49,85 +50,88 @@ header img {
 
 /* team box CSS */
 .info-team {
-    /* margin-top: 450px;   */
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    width: 1300px;
+    margin: 0 auto;
 }
 
-.box-team {
-    margin-bottom: 15px;
-    padding: 15px;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 40px;
-    
-  
-    margin-top: 20px;  
-    width: 600px;
-    background-color: #630a105d;
-    color: #fff;
+.info-team .box-team {
+    margin: 120px 0px;
+    text-align: center;
 }
 
-.box-team > p {
-    display: flex;
-    justify-content: center;
-
+.info-team .box-team img {
+    width: 20%
 }
 
+.info-team .box-team p {
+    font-family: 'Noto Sans KR', sans-serif;
+    width: 41%;
+    display: inline-block;
+    margin-left: 95px;
+    line-height: 3;
+    vertical-align: top;
+    font-size: 24px;
+    padding-top: 100px;
+    color: #646464;
+    text-align: left;
+}
+
+.info-team .box-team p span {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: #003310;
+}
 
 
 /* team card CSS */
 #columns {
-    width: 600px;
+    width: 1300px;
     margin: 20px auto 0;
-    
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-  }
-  
-  #columns figure {
-    width: 200px;
+    margin-bottom: 120px;
+}
 
+#columns figure {
+    width: 25%;
     display: inline-block;
     text-align: center;
-  
-    margin-bottom: 15px;
-    padding: 15px;
+    padding: 20px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
-  
-    border-radius: 40px;
-  }
-  
-  #columns figure img {
+    border-radius: 20px;
+    margin: 2% 2%;
+}
+
+#columns figure img {
     width: 100%;
-    border-radius: 30px;
-  }
-  
-  #columns figure figcaption.name {
+    border-radius: 15px;
+    height: 300px;
+}
+
+#columns figure figcaption.name {
     font-size: 24px;
     font-weight: 700;
-    color: #630A10;
-    padding: 10px;
-    margin-top: 11px;
-  }
-  
-  #columns figure figcaption.mbti {
-    padding: 10px;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#columns figure figcaption.mbti {
     border-radius: 18px;
-    color: white;
-    background-color: #4E6C50;
-  }
-  
-  #columns figure figcaption.caption {
+    color: #215632;
+    margin-bottom: 20px;
+}
+
+#columns figure figcaption.caption {
     padding: 10px;
     color: #617A55;
-  }
+}
 
 
 
-  /*post btn CSS */
-  .btnarea {
+/*post btn CSS */
+.btnarea {
     position: fixed;
     left: 50%;
     bottom: 50px;
@@ -182,7 +186,7 @@ div.fieldset {
     margin: 20px 0;
     padding: 20px;
     transform: translate(-50%, -50%);
-    border-radius: 5%;
+    border-radius: 15px;
     background-color: #fff;
 }
 
@@ -199,7 +203,8 @@ div.fieldset {
     vertical-align: middle;
 }
 
-.edit-overlay, .join-overlay button {
+.edit-overlay,
+.join-overlay button {
     border: 0;
     font-size: 16px;
 }
@@ -209,7 +214,9 @@ label {
     height: 100%;
 }
 
-.join-overlay, .info-overlay, .edit-overlay{
+.join-overlay,
+.info-overlay,
+.edit-overlay {
     height: 100%;
     width: 100%;
     display: none;
@@ -228,10 +235,10 @@ label {
 }
 
 .image-box,
-.name-box, 
-.mbti-box ,
+.name-box,
+.mbti-box,
 .blog-box,
-.comment-box, 
+.comment-box,
 .pw-box {
     width: 360px;
     border-radius: 10px;
@@ -239,7 +246,8 @@ label {
     margin-top: 15px;
 }
 
-#edit-advantages, #edit-collaboration {
+#edit-advantages,
+#edit-collaboration {
     width: 100%;
     border-radius: 5%;
     resize: none;
@@ -253,7 +261,7 @@ label {
     margin-top: 15px;
 }
 
-.modal-btn-area > button {
+.modal-btn-area>button {
     width: 160px;
     height: 40px;
     padding: 0;
@@ -264,7 +272,7 @@ label {
     background-color: #537188;
 }
 
-.modal-btn-area > button:hover {
+.modal-btn-area>button:hover {
     background-color: #537188;
     color: #E1D4BB;
     font-weight: 700;
@@ -277,34 +285,39 @@ label {
 /************* detail Modal heejung Edit End *************/
 /* detail Modal CSS*/
 
-        /* .detail클래스는 멤버 list 자세히 버튼 부분 (team card CSS 부분으로 올리면 좋을듯 합니다!)*/
-            .detail {
-                width: 100%;
-                height: 40px;
+/* .detail클래스는 멤버 list 자세히 버튼 부분 (team card CSS 부분으로 올리면 좋을듯 합니다!)*/
+.detail {
+    width: 100%;
+    height: 40px;
 
-                background-color: #630A10;
-                color: #FCF0C8;
-                font-size: 20px;
+    background-color: #215632;
+    color: white;
+    font-size: 20px;
 
-                border-radius: 50px;
-                border: 2px solid whitesmoke;
+    border-radius: 50px;
+    border: none;
+    /*border: 2px solid whitesmoke;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
 
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    opacity: 0.7;
+}
 
-                opacity: 0.7;
-            }
-            .detail:hover {
-                font-weight: 700;
-                border: 5px solid #630A10;
-                box-sizing: border-box;
+.detail:hover {
+    font-weight: 700;
+    border: 1px solid #215632;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: black;
 
-                opacity: 1;
-            } 
+    opacity: 1;
+}
 
-.detail-overlay, .join-overlay,.edit-overlay {
+.detail-overlay,
+.join-overlay,
+.edit-overlay {
     height: 100%;
     width: 100%;
     display: none;
@@ -320,24 +333,29 @@ label {
     height: 80vh;
     background-color: #fff;
     position: absolute;
-    left:50%; top:55%;
-    transform: translate(-50%,-50%);
-    padding:2%;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    padding: 2%;
     border-radius: 5px;
     overflow: scroll;
 }
+
 .edit-icons {
-    display: flex;  
-    justify-content: end;  
+    display: flex;
+    justify-content: end;
 }
+
 .edit-icons>div {
     width: 20px;
     margin-left: 5px;
 }
+
 .edit-icons>div>img {
     width: 100%;
 }
-.edit-icons > img {
+
+.edit-icons>img {
     cursor: pointer;
     width: 40px;
     margin: 5px;
@@ -345,29 +363,35 @@ label {
     border-radius: 50%;
     background-color: #fff;
 }
+
 .modal-close {
     font-size: 19px;
     font-weight: bold;
 }
+
 .info-flex {
     display: flex;
     gap: 30px;
-    align-items:center;
+    align-items: center;
 }
+
 .info-image img {
     width: 200px;
-    height: 200px;    
+    height: 200px;
     object-fit: cover;
     margin-bottom: 20px;
     border-radius: 300px;
 }
+
 .info-text {
-    line-height: 1.6;    
+    line-height: 1.6;
 }
+
 .info-text p.info-name {
     font-weight: bold;
     font-size: 1.2rem;
 }
+
 .info-text a {
     color: inherit;
 }
@@ -375,22 +399,27 @@ label {
 .info-contents .info-subject {
     background-color: #a7b6b8;
     color: #fff;
-    padding:3px 5px;
+    padding: 3px 5px;
     font-size: 20px;
     font-weight: 500;
     border-radius: 3px;
 }
-.info-advantages, .info-collaboration {
-    margin: 25px  15px;
+
+.info-advantages,
+.info-collaboration {
+    margin: 25px 15px;
     word-wrap: break-word;
     word-break: break-all;
-    white-space: pre-wrap; 
+    white-space: pre-wrap;
 }
+
 /* 댓글 입력  */
 .re-input {
     display: flex;
 }
-.re-input input, .re-input textarea{
+
+.re-input input,
+.re-input textarea {
     display: inline-block;
     padding: 0.5rem 0.75rem;
     font-weight: 400;
@@ -399,54 +428,69 @@ label {
     background-color: #fff;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     margin-right: 0.5%;
 }
-.re-input input {width: 10%;}
-.re-input textarea { width: 80%;}
+
+.re-input input {
+    width: 10%;
+}
+
+.re-input textarea {
+    width: 80%;
+}
+
 .re-input button {
     width: calc(100% - 91%);
     background-color: rgb(152, 207, 252);
-    border:0;
+    border: 0;
     border-radius: 0.25rem;
 }
-input:focus, textarea:focus {
+
+input:focus,
+textarea:focus {
     color: rgb(34, 34, 34);
     border-color: rgb(152, 207, 252);
     outline: 0;
 }
 
 /* 댓글 리스트  */
-#comment-list{
-    margin:20px 0;    
+#comment-list {
+    margin: 20px 0;
     background-color: #f1f1f1;
-    padding:20px 15px;
+    padding: 20px 15px;
     border-radius: 5px;
 }
+
 .comment-list-item {
-    padding:20px 10px;
+    padding: 20px 10px;
     border-bottom: solid 1px #e1e1e1;
 }
+
 .comment-list-item:last-child {
     border-bottom: 0;
 }
+
 .comment-get-items {
-    padding:5px;
+    padding: 5px;
     display: flex;
     justify-content: space-between;
 }
+
 .comment-edit-btn {
     font-size: 0.8rem;
 }
+
 .comment-get-items div button {
     background-color: transparent;
     border: 0;
-    color:rgb(73, 73, 73);
-    padding:0 5px;
+    color: rgb(73, 73, 73);
+    padding: 0 5px;
 }
+
 .comment-date {
     font-size: 0.8rem;
-    color:rgb(73, 73, 73);
+    color: rgb(73, 73, 73);
 }
 
 /* 왜 안먹힐까? 
