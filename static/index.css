@@ -6,6 +6,7 @@
     font-weight: 400;
     font-style: normal;
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 * {
     margin: 0;
@@ -56,12 +57,12 @@ header img {
 
 .info-team .box-team p {
     font-family: 'Noto Sans KR', sans-serif;
-    width: 41%;
+    width: 45%;
     display: inline-block;
     margin-left: 95px;
-    line-height: 3;
+    line-height: 1.6;
     vertical-align: top;
-    font-size: 24px;
+    font-size: 20px;
     padding-top: 100px;
     color: #646464;
     text-align: left;
@@ -356,7 +357,64 @@ label {
 .modal-close {
     font-size: 19px;
     font-weight: bold;
+    position: relative;
+    width: 40px;
+    cursor: pointer;
+    top: -1px;
+    margin-top: -1px;
+    margin-left: 6px!important;
 }
+.modal-close .inner {
+    width: inherit;
+	text-align: center;
+    cursor: pointer;
+}
+.modal-close label {
+    font-size: 0.4em;
+    line-height: 0.4em;
+    text-transform: uppercase;
+    color: #000;
+    transition: all .3s ease-in;
+    position: relative;
+    opacity: 0;
+    top: -2px;
+    cursor: pointer;
+}
+.modal-close .inner:before,
+.modal-close .inner:after {
+	position: absolute;
+	content: '';
+	height: 1px;
+	width: inherit;
+	background: #000000;
+	left: 0;
+	transition: all .3s ease-in;
+}
+.modal-close .inner:before {
+	top: 48%;
+	transform: rotate(45deg);
+}
+
+.modal-close .inner:after {
+	bottom: 50%;
+	transform: rotate(-45deg);
+}
+.modal-close.outer:hover label {
+	opacity: 1;
+}
+.modal-close.outer:hover .inner:before,
+.modal-close.outer:hover .inner:after {
+	transform: rotate(0);
+}
+
+.modal-close.outer:hover .inner:before {
+	top: 0;
+}
+
+.modal-close.outer:hover .inner:after {
+	bottom: 0;
+}
+
 
 .info-flex {
     display: flex;
