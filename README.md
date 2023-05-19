@@ -7,7 +7,7 @@
 | 팀원   | 스택         | 팀원구분 | 깃허브                                      | 블로그                                             |
 | ------ | ------------ | -------- | ------------------------------------------- | -------------------------------------------------- |
 | 김슬기 | `프론트엔드` | 팀원   | [Seogun95](https://github.com/Seogun95)     | [서근개발노트](https://seons-dev.tistory.com/)     |
-| 김진성 | `프론트엔드` | 팀원     | [이현동](https://github.com/hdlee0619)      | [hyeondong's develog](https://velog.io/@hdlee0619) |
+| 김진성 | `프론트엔드` | 팀원     | [jinsung](https://github.com/treasureholy)      | [jinsung](https://bit.ly/3MegmlW) |
 | 유희정 | `프론트엔드` | 팀원     | [heejung-newheee](https://github.com/heejung-newheee) | [newheee](https://newheee.tistory.com/)               |
 | 이지은 | `프론트엔드`     | 팀원     | [JellyBear97](https://github.com/JellyBear97)     | [JellyBear97](https://iam-jelly-bear.com/)       |
 | 유지완 | `프론트엔드`     | `팀장`     | [NickU](https://github.com/NickYOOO?tab=repositories)     | [NickU](https://velog.io/@yjw0517)       |
