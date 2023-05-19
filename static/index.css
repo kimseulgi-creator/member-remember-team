@@ -16,9 +16,7 @@
     text-decoration: none;
 }
 
-
-
-/* header CSS */
+/* header CSS*/
 .inner {
     width: 1280px;
     margin: 0 auto;
@@ -26,12 +24,6 @@
 
 header {
     width: 100%;
-    background-color: #3F4E4F;
-    height: 205.25px;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9;
 }
 
 header .inner,
@@ -47,8 +39,7 @@ header img {
 
 
 
-
-/* team box CSS */
+/* team box CSS*/
 .info-team {
     width: 1300px;
     margin: 0 auto;
@@ -83,7 +74,7 @@ header img {
 }
 
 
-/* team card CSS */
+/* team card CSS*/
 #columns {
     width: 1300px;
     margin: 20px auto 0;
@@ -130,7 +121,7 @@ header img {
 
 
 
-/*post btn CSS */
+/*post btn CSS*/
 .btnarea {
     position: fixed;
     left: 50%;
@@ -167,7 +158,6 @@ header img {
 
     opacity: 1;
 }
-
 
 
 
@@ -296,7 +286,6 @@ label {
 
     border-radius: 50px;
     border: none;
-    /*border: 2px solid whitesmoke;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -413,7 +402,7 @@ label {
     white-space: pre-wrap;
 }
 
-/* 댓글 입력  */
+/* 댓글 입력*/
 .re-input {
     display: flex;
 }

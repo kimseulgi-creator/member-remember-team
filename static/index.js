@@ -32,7 +32,7 @@ $(function () {
 
             });
 
-            //  detail-Modal , Get ,Modal close status
+            //  detail-Modal (Get ,Modal close status)
             $('.content').click(function () {
                 let detail_modal = $('.detail-overlay');
 
@@ -66,23 +66,11 @@ $(function () {
                 });
             });
 
-            //  edit-submit button
-            $('.detail-flex .edit').click(function () {
-                let detail = $('.detail-overlay');
-                let edit = $('.edit-overlay');
-                let _id = $('.detail-overlay').data('id');
-
-                $('.edit-overlay').attr('data-num', _id);
-
-                detail.css('display', 'none');
-                edit.css('display', 'block');
-
-                info_load();
-            });
 
 
 
-            function info_load() {   //  게시글 정보 input에 불러오기
+            //  edit Modal 데이터 input에 불러오기
+            function info_load() {
 
                 let id = $('#detail').data('num');
                 let all_id = rows.map(rows => rows['_id']);
@@ -106,7 +94,7 @@ $(function () {
 
             }
 
-            // 수정---------------------------------
+            // edit Modal 유효성 검사
             $('.edit-submit').click(check_edit)
 
             const checkImg = $('#overlay #edit-img');
@@ -167,8 +155,9 @@ $(function () {
                     alert("비밀번호를 확인해주세요!")
                     checkPw.focus();
                     return false
-                } 
+                }
             }
+
 
             function update_info() {
                 let $id = $('#detail').data('num');
@@ -193,8 +182,21 @@ $(function () {
                     alert(data['msg']);
                     window.location.reload();
                 });
-
             }
+
+            // edit-submit button
+            $('.detail-flex .edit').click(function () {
+                let detail = $('.detail-overlay');
+                let edit = $('.edit-overlay');
+                let _id = $('.detail-overlay').data('id');
+
+                $('.edit-overlay').attr('data-num', _id);
+
+                detail.css('display', 'none');
+                edit.css('display', 'block');
+
+                info_load();
+            });
 
             // edit-cancel button
             $('.edit-cancel').click(function () {
@@ -223,7 +225,6 @@ $(function () {
                     fetch('/post/delete', { method: "DELETE", body: formData }).then((res) => res.json()).then((data) => {
                         alert(data['msg']);
 
-
                         window.location.reload();
                     });
                 } else {
@@ -232,11 +233,9 @@ $(function () {
                     return false;
                 }
             }
+        }); //******************fetch get end point************************
 
-
-
-        }); //--------------------------------fetch get----------------------
-
+      
         //   open detail-Modal
 
         $('.detail').click(function () {
@@ -247,7 +246,7 @@ $(function () {
             });
         });
 
-        //  close detail-Modal
+        //  close detail-Modal 모달 바깥
         $(document).click(function (e) {
             if ($('#detail').is(e.target)) {
                 $('.detail-overlay').css({
@@ -255,7 +254,17 @@ $(function () {
                 });
             }
         });
-        //  info-Modal edit/delete icon hover
+
+        //  close detail-Modal x버튼
+        $('.modal-close').click(function () {
+            let detail_modal = $('.detail-overlay');
+
+            detail_modal.css({
+                'display': 'none'
+            });
+        });
+
+        //  detail-Modal  (edit/delete/close icon hover)
         $('.edit-icons .edit').hover(function () {
             $(this).attr('src', '../static/icon/pencil-filled.svg');
         }, function () {
@@ -267,10 +276,17 @@ $(function () {
         }, function () {
             $(this).attr('src', '../static/icon/trash-can-lined.svg');
         });
+        // ************* X버튼 호버, 주려다  *************
+        // $('.edit-icons .modal-close').hover(function() {
+        //     let detail_modal_close = $('.modal-close');
 
+        //     detail_modal_close.css({
+        //         'font-weight': '300'
+        //     })
+        // });
     }
-
-    //join Modal Open, Close
+    //******************* post **********************/
+    // join Modal Open, Close
 
     $('.join').click(function () {
         let join_modal = $('.join-overlay');

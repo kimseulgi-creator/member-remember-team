@@ -6,17 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>기억해조re_member 💭</title>
+    
     <link rel="icon" type="image/x-icon" href="../static/img/logo-black.png">
 
     <link rel="stylesheet" href="../static/index.css" />
 
-    <!-- <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&family=Playfair+Display:ital@1&display=swap');
-    </style> -->
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
     <script src="../static/index.js"></script>
 
 </head>
@@ -24,9 +19,10 @@
 <body>
     <!-- Header -->
     <header>
-        <img src="../static/img/header.jpg 20-24-38-040.jpg" alt="메인헤더사진">
+        <img src="../static/img/header.jpg 20-24-38-040.jpg" alt="banner">
     </header>
-    <!-- team contents "onClick 이벤트 추가 페이지 열기" -->
+
+    <!-- team contents -->
     <div class="info-team">
         <div class="box-team">
             <img src="../static/img/profile02.png" alt="">
@@ -34,26 +30,91 @@
             </p>
         </div>
     </div>
+
     <!-- member list -->
     <div id="columns">
 
     </div>
-    <!--btn area-->
+
+    <!-- btn area -->
     <div class="btnarea">
         <button class="join">함께할래요 ✋🏻</button>
     </div>
 
+    <!-- post Modal -->
 
+    <div id="overlay" class="join-overlay">
+        <div class="fieldset">
 
-    <!--detail Modal -->
+            <div class="title">
+                <p>기억해조 가입하기</p>
+            </div>
+
+            <table>
+                <colgroup>
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td class="image-box">
+                            <input type="text" id="img" name="img" size="35" placeholder="이미지 url을 적어줘">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="name-box">
+                            <label for="aname">
+                                <input type="text" id="aname" name="aname" size="35" placeholder="이름을 적어줘" autofocus>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="mbti-box">
+                            <label for="mbti">
+                                <input type="text" id="mbti" name="mbti" size="35" placeholder="MBTI 적어줘" autofocus>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="blog-box">
+                            <input id="blog" name="blog" cols="30" rows="5" placeholder="블로그를 적어줘"></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="comment-box">
+                            <textarea name="edit-advantages" id="edit-advantages" cols="30" rows="5"
+                                placeholder="너의 장점을 적어줘"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="comment-box">
+                            <textarea name="edit-collaboration" id="edit-collaboration" cols="30" rows="5"
+                                placeholder="너의 협업 스타일을 적어줘"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pw-box">
+                            <input type="password" id="pw" name="pw" maxlength="15" size="35" placeholder="비밀번호를 적어줘">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="modal-btn-area">
+                <button class="submit">함께해요</button>
+                <button class="cancel">취소하기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- detail Modal -->
     <div id="detail" class="detail-overlay">
         <div class="detail-sec">
             <div class="edit-icons detail-flex">
-                <!-- 수정 버튼 -->
+                <!-- edit btn -->
                 <div><img src="../static/icon/pencil-lined.svg" alt="#" class="edit"></div>
-                <!-- 삭제 버튼 -->
+                <!-- delete btn -->
                 <div><img src="../static/icon/trash-can-lined.svg" alt="#" class="del"></div>
-                <!-- 닫기 버튼  -->
+                <!-- close btn  -->
                 <div class="modal-close">X</div>
             </div>
 
@@ -79,6 +140,7 @@
                     <p class="info-collaboration">소통을 중요시 생각하는 스타일입니다. 동물들과 친화력이 상당히 좋은 편이라 대화까지 나눌 수 있고, 생쥐들과 고양이 집에사는
                         개와 말등 다른 동물들의 식사까지 챙겨주며 협력했습니다. </p>
                 </div>
+
                 <!-- 댓글 입력  -->
                 <div class="re-input">
                     <input id="comment-name" placeholder="이름" />
@@ -185,70 +247,8 @@
             </div>
         </div>
     </div>
-    <!--post Modal-->
-    <div id="overlay" class="join-overlay">
-        <div class="fieldset">
 
-            <div class="title">
-                <p>기억해조 가입하기</p>
-            </div>
-
-            <table>
-                <colgroup>
-                    <col>
-                </colgroup>
-                <tbody>
-                    <tr>
-                        <td class="image-box">
-                            <input type="text" id="img" name="img" size="35" placeholder="이미지 url을 적어줘">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="name-box">
-                            <label for="aname">
-                                <input type="text" id="aname" name="aname" size="35" placeholder="이름을 적어줘" autofocus>
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="mbti-box">
-                            <label for="mbti">
-                                <input type="text" id="mbti" name="mbti" size="35" placeholder="MBTI 적어줘" autofocus>
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="blog-box">
-                            <input id="blog" name="blog" cols="30" rows="5" placeholder="블로그를 적어줘"></input>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="comment-box">
-                            <textarea name="edit-advantages" id="edit-advantages" cols="30" rows="5"
-                                placeholder="너의 장점을 적어줘"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="comment-box">
-                            <textarea name="edit-collaboration" id="edit-collaboration" cols="30" rows="5"
-                                placeholder="너의 협업 스타일을 적어줘"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="pw-box">
-                            <input type="password" id="pw" name="pw" maxlength="15" size="35" placeholder="비밀번호를 적어줘">
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="modal-btn-area">
-                <button class="submit">작성하기</button>
-                <button class="cancel">취소하기</button>
-            </div>
-        </div>
-    </div>
-    <!--edit Modal-->
+    <!-- edit Modal -->
     <div id="overlay" class="edit-overlay">
         <div class="fieldset">
 
@@ -309,7 +309,7 @@
             </table>
 
             <div class="modal-btn-area">
-                <button class="edit-submit">작성하기</button>
+                <button class="edit-submit">수정하기</button>
                 <button class="edit-cancel">취소하기</button>
             </div>
         </div>
