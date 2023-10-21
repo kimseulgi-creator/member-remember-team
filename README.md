@@ -49,6 +49,7 @@
 ## 6. API Table
 <img width="833" alt="스크린샷 2023-05-19 오후 7 52 46" src="https://github.com/remember0515/Re_Member/assets/108923582/289b7f54-bbb0-4cd8-b210-4a87f4a9eda1">
                                                                    |
+
 ## 7. 구현기능
 
 - 유효성 검사
