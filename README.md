@@ -35,6 +35,7 @@
 ## 3. 프로젝트 Notion
 
 [기억해조 Notion](https://tide-seaplane-2ae.notion.site/dd0a7c06a79240ba8af9a32fec5677ae)
+
 [기억해조 회고록](https://www.notion.so/5-19-5e8e473d2e6940d5930dd12581f07a65)
 
 ## 4. 기술스택
